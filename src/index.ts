@@ -1,3 +1,49 @@
+import { useMemo, useState } from 'react'
+import { interpret } from 'xstate'
+import { useSyncExternalStore } from 'use-sync-external-store'
+import {
+  BottomSheetMachine,
+  type BottomSheetContext,
+  type BottomSheetEvent,
+} from '@bottom-sheet/state-machine'
+
 export function useBottomSheetMachine() {
-  // @TODO: implement the state machine using use-sync-external-store
+  // useState lets us create the store exactly once, which is a guarantee that useMemo doesn't provide
+  const [store] = useState(() => {
+    const service = interpret(BottomSheetMachine)
+    const matches: typeof service.state.matches = (parentStateValue) =>
+      service.state.matches(parentStateValue)
+
+    return {
+      subscribe: (onStoreChange: () => void) => {
+        service.onTransition((state) => {
+          // @TODO: flesh out the logic for when to notify react of state changes or not (as state updates can be expensive and we should be transient when possible)
+          if (state.changed) {
+            onStoreChange()
+          }
+        })
+        service.start()
+        return () => void service.stop()
+      },
+      getSnapshot: () => service.state.context,
+      matches,
+      dispatch(event: BottomSheetEvent) {
+        return service.send(event)
+      },
+    }
+  })
+  const context = useSyncExternalStore<BottomSheetContext>(
+    store.subscribe,
+    store.getSnapshot
+  )
+
+  return useMemo(
+    () => ({
+      context,
+      getSnapshot: store.getSnapshot,
+      dispatch: store.dispatch,
+      matches: store.matches,
+    }),
+    [context, store.dispatch, store.getSnapshot, store.matches]
+  )
 }
