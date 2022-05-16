@@ -1,0 +1,4 @@
+# Ignore nested node_modules
+node_modules/
+dist/
+.parcel-cache

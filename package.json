@@ -1,0 +1,80 @@
+{
+  "name": "@bottom-sheet/react-hooks",
+  "version": "0.0.0",
+  "description": "The hooks that power `@bottom-sheet/react-spring`",
+  "keywords": [
+    "typescript",
+    "xstate",
+    "bottom-sheet",
+    "react-spring-bottom-sheet"
+  ],
+  "homepage": "https://react-spring.bottom-sheet.dev",
+  "bugs": {
+    "url": "https://github.com/bottom-sheet/react-hooks/issues"
+  },
+  "repository": "bottom-sheet/react-hooks",
+  "license": "MIT",
+  "author": "Cody Olsen",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/esm/index.js"
+    }
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "source": "src/index.ts",
+  "types": "dist/dts/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist/**",
+    "build": "parcel build",
+    "dev": "parcel watch",
+    "lint": "eslint . --ext ts,tsx,js,jsx --max-warnings 0 && prettier --check .",
+    "lint:format": "eslint . --ext ts,tsx,js,jsx --fix && prettier --write .",
+    "package-check": "npx package-check",
+    "prepublishOnly": "npm run build",
+    "test": "npm run lint && npm run type-check && npm run build && npx jest && npm run package-check",
+    "type-check": "tsc --noEmit",
+    "watch": "npx jest --watch"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "dependencies": {
+    "@bottom-sheet/state-machine": "^1.0.4",
+    "@bottom-sheet/types": "^1.0.3"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.17.0",
+    "@parcel/packager-ts": "^2.5.0",
+    "@parcel/transformer-typescript-types": "^2.5.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@skypack/package-check": "^0.2.2",
+    "@types/jest": "^27.5.1",
+    "@types/node": "^17.0.33",
+    "@xstate/cli": "^0.1.7",
+    "eslint": "^8.15.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "jest": "^28.1.0",
+    "parcel": "^2.5.0",
+    "prettier": "^2.6.2",
+    "prettier-plugin-packagejson": "^2.2.18",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^19.0.2",
+    "ts-jest": "^28.0.2",
+    "typescript": "^4.6.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
