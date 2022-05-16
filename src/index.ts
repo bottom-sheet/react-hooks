@@ -1,9 +1,8 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { interpret } from 'xstate'
 import { useSyncExternalStore } from 'use-sync-external-store/shim'
 import {
   BottomSheetMachine,
-  type BottomSheetContext,
   type BottomSheetEvent,
 } from '@bottom-sheet/state-machine'
 

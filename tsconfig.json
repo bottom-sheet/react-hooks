@@ -9,6 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "jsx": "preserve",
     "module": "esnext",
     "moduleResolution": "node",
     "isolatedModules": true,
