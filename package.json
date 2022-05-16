@@ -45,12 +45,6 @@
     "semi": false,
     "singleQuote": true
   },
-  "dependencies": {
-    "@bottom-sheet/state-machine": "^1.0.4",
-    "@bottom-sheet/types": "^1.0.3",
-    "@types/use-sync-external-store": "^0.0.3",
-    "use-sync-external-store": "^1.1.0"
-  },
   "jest": {
     "rootDir": ".",
     "testEnvironment": "jsdom",
@@ -59,6 +53,13 @@
         "@swc/jest"
       ]
     }
+  },
+  "dependencies": {
+    "@bottom-sheet/state-machine": "^1.0.4",
+    "@bottom-sheet/types": "^1.0.3",
+    "@types/use-sync-external-store": "^0.0.3",
+    "use-sync-external-store": "^1.1.0",
+    "xstate": "^4.32.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.17.0",
@@ -78,7 +79,6 @@
     "@typescript-eslint/parser": "^5.23.0",
     "@xstate/cli": "^0.1.7",
     "eslint": "^8.15.0",
-    "eslint-config-next": "^12.1.6",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.26.0",

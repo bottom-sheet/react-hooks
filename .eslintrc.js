@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['react-app', 'next/core-web-vitals'],
+  extends: ['react-app'],
   plugins: ['testing-library'],
   overrides: [
     // Only uses Testing Library lint rules in test files
