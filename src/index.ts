@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { interpret } from 'xstate'
-import { useSyncExternalStore } from 'use-sync-external-store'
+import { useSyncExternalStore } from 'use-sync-external-store/shim'
 import {
   BottomSheetMachine,
   type BottomSheetContext,
@@ -12,7 +12,9 @@ export function useBottomSheetMachine() {
   const [store] = useState(() => {
     const service = interpret(BottomSheetMachine)
     const matches: typeof service.state.matches = (parentStateValue) =>
-      service.state.matches(parentStateValue)
+      service.initialized
+        ? service.state.matches(parentStateValue)
+        : service.initialState.matches(parentStateValue)
 
     return {
       subscribe: (onStoreChange: () => void) => {
@@ -25,7 +27,10 @@ export function useBottomSheetMachine() {
         service.start()
         return () => void service.stop()
       },
-      getSnapshot: () => service.state.context,
+      getSnapshot: () =>
+        service.initialized
+          ? service.state.context
+          : service.initialState.context,
       matches,
       dispatch(event: BottomSheetEvent) {
         return service.send(event)
