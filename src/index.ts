@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { interpret } from 'xstate'
 import { useSyncExternalStore } from 'use-sync-external-store/shim'
 import {
@@ -7,38 +7,45 @@ import {
 } from '@bottom-sheet/state-machine'
 
 function createStore() {
+  console.debug('createStore')
   const service = interpret(BottomSheetMachine)
-  const matches: typeof service.state.matches = (parentStateValue) =>
-    service.initialized
-      ? service.state.matches(parentStateValue)
-      : service.initialState.matches(parentStateValue)
+  let snapshot = service.initialState
+  // transient is updated more frequently than the snapshot, outside of react render cycles
+  let transient = snapshot
 
   return {
     subscribe: (onStoreChange: () => void) => {
-      console.log('subscribe called!')
+      console.debug('store.subscribe')
       service.onTransition((state) => {
         // @TODO: flesh out the logic for when to notify react of state changes or not (as state updates can be expensive and we should be transient when possible)
+        // @TODO: put updateSnapshot actions in the state machine as declared events
+        // for now just re-render on every change and map out events in userland before abstracting them to the state machine
         if (state.changed) {
+          console.groupCollapsed('state.changed')
+          transient = snapshot = state
+          console.log(state.value, state.context)
           onStoreChange()
-        }
+          console.groupEnd()
+        } else console.debug('state.changed: false')
       })
+      console.debug('service.start')
       service.start()
-      return () => void service.stop()
+      // return () => void service.stop()
+      return () => {
+        console.debug('service.stop')
+        service.stop()
+      }
     },
-    getInitialized() {
-      return service.initialized
-    },
-    getSnapshot: () =>
-      service.initialized ? service.state : service.initialState,
-    matches,
+    getSnapshot: () => snapshot,
+    getTransientSnapshot: () => transient,
     dispatch(event: BottomSheetEvent) {
       return service.send(event)
     },
   }
 }
-const store = createStore()
 
 export function useBottomSheetMachine() {
+  const [store] = useState(() => createStore())
   /*
   // useState lets us create the store exactly once, which is a guarantee that useMemo doesn't provide
   const [store] = useState(() => {
@@ -84,14 +91,10 @@ export function useBottomSheetMachine() {
 
   return useMemo(
     () => ({
-      context: state.context,
-      getSnapshot: store.getSnapshot,
+      state,
+      getTransientSnapshot: store.getTransientSnapshot,
       dispatch: store.dispatch,
-      matches: store.matches,
-      get initialized() {
-        return store.getInitialized()
-      },
     }),
-    [state.context]
+    [state, store.dispatch, store.getTransientSnapshot]
   )
 }

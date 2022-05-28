@@ -5,7 +5,7 @@ import { useBottomSheetMachine } from '..'
 describe('useBottomSheetMachine', () => {
   test('SET_MAX_HEIGHT', async () => {
     function Printer() {
-      const { dispatch, context } = useBottomSheetMachine()
+      const { dispatch, state } = useBottomSheetMachine()
       useEffect(
         () =>
           void dispatch({
@@ -14,7 +14,7 @@ describe('useBottomSheetMachine', () => {
           }),
         [dispatch]
       )
-      return <div>maxHeight: {context.maxHeight}</div>
+      return <div>maxHeight: {state.context.maxHeight}</div>
     }
     const { findByText } = render(<Printer />)
 
