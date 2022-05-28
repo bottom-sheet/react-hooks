@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/bottom-sheet/react-hooks/compare/v1.0.2...v1.0.3) (2022-05-28)
+
+
+### Bug Fixes
+
+* **deps:** lock file maintenance ([#8](https://github.com/bottom-sheet/react-hooks/issues/8)) ([eaebfc7](https://github.com/bottom-sheet/react-hooks/commit/eaebfc7003caf5304f686e3ab4c20ff864b6fce0))
+
 ## [1.0.2](https://github.com/bottom-sheet/react-hooks/compare/v1.0.1...v1.0.2) (2022-05-28)
 
 
