@@ -66,7 +66,9 @@ function createStore({
   }
 }
 
-export function useBottomSheetMachine(props: BottomSheetMachineProps = {}) {
+export const useBottomSheetMachine = function useBottomSheetMachine(
+  props: BottomSheetMachineProps = {}
+) {
   const [store] = useState(() => createStore(props))
   /*
   // useState lets us create the store exactly once, which is a guarantee that useMemo doesn't provide
