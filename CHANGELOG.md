@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/bottom-sheet/react-hooks/compare/v1.0.6...v1.0.7) (2022-05-28)
+
+
+### Bug Fixes
+
+* add initialHeight and snapPoints getters ([d35c4e4](https://github.com/bottom-sheet/react-hooks/commit/d35c4e4453e1a2dc06a6794eb673af38ade99221))
+
 ## [1.0.6](https://github.com/bottom-sheet/react-hooks/compare/v1.0.5...v1.0.6) (2022-05-28)
 
 
