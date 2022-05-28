@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/bottom-sheet/react-hooks/compare/v1.0.1...v1.0.2) (2022-05-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependencies (non-major) ([#5](https://github.com/bottom-sheet/react-hooks/issues/5)) ([d064ae3](https://github.com/bottom-sheet/react-hooks/commit/d064ae3671d67ce07f1c27d26c4778042e9bca80))
+
 ## [1.0.1](https://github.com/bottom-sheet/react-hooks/compare/v1.0.0...v1.0.1) (2022-05-16)
 
 
