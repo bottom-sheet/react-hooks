@@ -5,10 +5,32 @@ import {
   BottomSheetMachine,
   type BottomSheetEvent,
 } from '@bottom-sheet/state-machine'
+import {
+  assignSnapPoints,
+  assignInitialHeight,
+  defaultInitialHeight,
+  defaultSnapPoints,
+} from '@bottom-sheet/state-machine'
+import type { GetInitialHeight, GetSnapPoints } from '@bottom-sheet/types'
 
-function createStore() {
+export interface BottomSheetMachineProps {
+  initialHeight?: GetInitialHeight
+  snapPoints?: GetSnapPoints
+}
+
+function createStore({
+  initialHeight = defaultInitialHeight,
+  snapPoints = defaultSnapPoints,
+}: BottomSheetMachineProps = {}) {
   console.debug('createStore')
-  const service = interpret(BottomSheetMachine)
+  const service = interpret(
+    BottomSheetMachine.withConfig({
+      actions: {
+        setInitialHeight: assignInitialHeight(initialHeight),
+        setSnapPoints: assignSnapPoints(snapPoints),
+      },
+    })
+  )
   let snapshot = service.initialState
   // transient is updated more frequently than the snapshot, outside of react render cycles
   let transient = snapshot
@@ -44,8 +66,8 @@ function createStore() {
   }
 }
 
-export function useBottomSheetMachine() {
-  const [store] = useState(() => createStore())
+export function useBottomSheetMachine(props: BottomSheetMachineProps = {}) {
+  const [store] = useState(() => createStore(props))
   /*
   // useState lets us create the store exactly once, which is a guarantee that useMemo doesn't provide
   const [store] = useState(() => {
