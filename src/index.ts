@@ -98,3 +98,5 @@ export function useBottomSheetMachine() {
     [state, store.dispatch, store.getTransientSnapshot]
   )
 }
+
+export type BottomSheetMachineHook = ReturnType<typeof useBottomSheetMachine>
