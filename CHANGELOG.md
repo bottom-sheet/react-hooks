@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/bottom-sheet/react-hooks/compare/v1.0.3...v1.0.4) (2022-05-28)
+
+
+### Bug Fixes
+
+* forward the state object ([a33fbd1](https://github.com/bottom-sheet/react-hooks/commit/a33fbd1ca32c91ea15138b96176038e41b2c69c4))
+
 ## [1.0.3](https://github.com/bottom-sheet/react-hooks/compare/v1.0.2...v1.0.3) (2022-05-28)
 
 
