@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/bottom-sheet/react-hooks/compare/v1.0.7...v1.0.8) (2022-05-28)
+
+
+### Bug Fixes
+
+* preserve hook name ([58fc946](https://github.com/bottom-sheet/react-hooks/commit/58fc9462751260582abc0d417ca3449538df6f77))
+
 ## [1.0.7](https://github.com/bottom-sheet/react-hooks/compare/v1.0.6...v1.0.7) (2022-05-28)
 
 
