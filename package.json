@@ -14,7 +14,7 @@
   },
   "repository": "bottom-sheet/react-hooks",
   "license": "MIT",
-  "author": "Cody Olsen",
+  "author": "Cody Olsen <stipsan@gmail.com>",
   "sideEffects": false,
   "exports": {
     ".": {
