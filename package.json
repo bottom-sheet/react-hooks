@@ -55,8 +55,8 @@
     }
   },
   "dependencies": {
-    "@bottom-sheet/state-machine": "^1.0.8",
-    "@bottom-sheet/types": "^1.0.5",
+    "@bottom-sheet/state-machine": "^1.0.10",
+    "@bottom-sheet/types": "^1.0.6",
     "@types/use-sync-external-store": "^0.0.3",
     "use-sync-external-store": "^1.1.0",
     "xstate": "^4.32.1"
@@ -70,9 +70,9 @@
     "@skypack/package-check": "^0.2.2",
     "@swc/core": "^1.2.194",
     "@swc/jest": "^0.2.21",
-    "@testing-library/react": "^13.2.0",
+    "@testing-library/react": "^13.3.0",
     "@types/jest": "^27.5.1",
-    "@types/node": "^17.0.35",
+    "@types/node": "^17.0.36",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
