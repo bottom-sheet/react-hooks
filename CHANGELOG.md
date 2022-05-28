@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/bottom-sheet/react-hooks/compare/v1.0.4...v1.0.5) (2022-05-28)
+
+
+### Bug Fixes
+
+* allow react 17 ([eb19f59](https://github.com/bottom-sheet/react-hooks/commit/eb19f598069be36f7a3cb82545e14987f0fb7360))
+
 ## [1.0.4](https://github.com/bottom-sheet/react-hooks/compare/v1.0.3...v1.0.4) (2022-05-28)
 
 
