@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/bottom-sheet/react-hooks/compare/v1.0.5...v1.0.6) (2022-05-28)
+
+
+### Bug Fixes
+
+* export hook return type ([30a17e4](https://github.com/bottom-sheet/react-hooks/commit/30a17e454313984287a7864af9d9d909457123d5))
+
 ## [1.0.5](https://github.com/bottom-sheet/react-hooks/compare/v1.0.4...v1.0.5) (2022-05-28)
 
 
