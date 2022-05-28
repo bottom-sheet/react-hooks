@@ -55,39 +55,39 @@
     }
   },
   "dependencies": {
-    "@bottom-sheet/state-machine": "^1.0.4",
-    "@bottom-sheet/types": "^1.0.3",
+    "@bottom-sheet/state-machine": "^1.0.8",
+    "@bottom-sheet/types": "^1.0.5",
     "@types/use-sync-external-store": "^0.0.3",
     "use-sync-external-store": "^1.1.0",
     "xstate": "^4.32.1"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.17.0",
-    "@parcel/packager-ts": "^2.5.0",
-    "@parcel/transformer-typescript-types": "^2.5.0",
+    "@babel/eslint-parser": "^7.18.2",
+    "@parcel/packager-ts": "^2.6.0",
+    "@parcel/transformer-typescript-types": "^2.6.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@skypack/package-check": "^0.2.2",
-    "@swc/core": "^1.2.185",
+    "@swc/core": "^1.2.194",
     "@swc/jest": "^0.2.21",
     "@testing-library/react": "^13.2.0",
     "@types/jest": "^27.5.1",
-    "@types/node": "^17.0.33",
+    "@types/node": "^17.0.35",
     "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.4",
-    "@typescript-eslint/eslint-plugin": "^5.23.0",
-    "@typescript-eslint/parser": "^5.23.0",
+    "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
     "@xstate/cli": "^0.1.7",
-    "eslint": "^8.15.0",
+    "eslint": "^8.16.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
-    "parcel": "^2.5.0",
+    "parcel": "^2.6.0",
     "prettier": "^2.6.2",
     "prettier-plugin-packagejson": "^2.2.18",
     "react": "^18.1.0",
@@ -95,11 +95,11 @@
     "react-test-renderer": "^18.1.0",
     "rimraf": "^3.0.2",
     "semantic-release": "^19.0.2",
-    "ts-jest": "^28.0.2",
-    "typescript": "^4.6.4"
+    "ts-jest": "^28.0.3",
+    "typescript": "^4.7.2"
   },
   "peerDependencies": {
-    "react": "17 || 18"
+    "react": "^18"
   },
   "publishConfig": {
     "access": "public"
