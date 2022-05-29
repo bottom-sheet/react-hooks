@@ -1,17 +1,17 @@
-import { useMemo, useState } from 'react'
-import { interpret } from 'xstate'
-import { useSyncExternalStore } from 'use-sync-external-store/shim'
 import {
-  BottomSheetMachine,
   type BottomSheetEvent,
+  BottomSheetMachine,
 } from '@bottom-sheet/state-machine'
 import {
-  assignSnapPoints,
   assignInitialHeight,
+  assignSnapPoints,
   defaultInitialHeight,
   defaultSnapPoints,
 } from '@bottom-sheet/state-machine'
 import type { GetInitialHeight, GetSnapPoints } from '@bottom-sheet/types'
+import { useMemo, useState } from 'react'
+import { useSyncExternalStore } from 'use-sync-external-store/shim'
+import { interpret } from 'xstate'
 
 export interface BottomSheetMachineProps {
   initialHeight?: number | GetInitialHeight
