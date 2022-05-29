@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/bottom-sheet/react-hooks/compare/v1.0.12...v1.0.13) (2022-05-29)
+
+
+### Bug Fixes
+
+* better debug logs ([db917a8](https://github.com/bottom-sheet/react-hooks/commit/db917a8d7591b82792caa49fcffbb12a726f42f9))
+
 ## [1.0.12](https://github.com/bottom-sheet/react-hooks/compare/v1.0.11...v1.0.12) (2022-05-29)
 
 
