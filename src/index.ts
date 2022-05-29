@@ -14,7 +14,7 @@ import {
 import type { GetInitialHeight, GetSnapPoints } from '@bottom-sheet/types'
 
 export interface BottomSheetMachineProps {
-  initialHeight?: GetInitialHeight
+  initialHeight?: number | GetInitialHeight
   snapPoints?: GetSnapPoints
 }
 
@@ -26,7 +26,11 @@ function createStore({
   const service = interpret(
     BottomSheetMachine.withConfig({
       actions: {
-        setInitialHeight: assignInitialHeight(initialHeight),
+        setInitialHeight: assignInitialHeight(
+          typeof initialHeight === 'function'
+            ? initialHeight
+            : () => initialHeight
+        ),
         setSnapPoints: assignSnapPoints(snapPoints),
       },
     })
