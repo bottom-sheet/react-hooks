@@ -38,6 +38,7 @@ function createStore({
   let snapshot = service.initialState
   // transient is updated more frequently than the snapshot, outside of react render cycles
   let transient = snapshot
+  let rAF = 0
 
   return {
     subscribe: (onStoreChange: () => void) => {
@@ -46,18 +47,21 @@ function createStore({
         // @TODO: flesh out the logic for when to notify react of state changes or not (as state updates can be expensive and we should be transient when possible)
         // @TODO: put updateSnapshot actions in the state machine as declared events
         // for now just re-render on every change and map out events in userland before abstracting them to the state machine
+        console.groupCollapsed('state.changed')
+        transient = state
+        console.log('transient', state.value, state.context)
         if (state.changed) {
-          console.groupCollapsed('state.changed')
-          transient = snapshot = state
-          console.log(state.value, state.context)
-          onStoreChange()
-          console.groupEnd()
-        } else {
-          console.groupCollapsed('state.changed: false')
-          transient = state
-          console.log(state.value, state.context)
+          cancelAnimationFrame(rAF)
+          rAF = requestAnimationFrame(() => {
+            console.group('onStoreChange')
+            console.log({ value: state.value, context: state.context })
+            transient = snapshot = state
+            onStoreChange()
+            console.groupEnd()
+          })
           console.groupEnd()
         }
+        console.groupEnd()
       })
       console.debug('service.start')
       service.start()

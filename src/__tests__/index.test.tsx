@@ -6,7 +6,7 @@ import { useBottomSheetMachine } from '..'
 describe('useBottomSheetMachine', () => {
   test('SET_MAX_HEIGHT', async () => {
     function Printer() {
-      const { dispatch, state } = useBottomSheetMachine()
+      const { dispatch, state } = useBottomSheetMachine({ initialHeight: 614 })
       useEffect(
         () =>
           void dispatch({
