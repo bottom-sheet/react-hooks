@@ -62,7 +62,10 @@ function createStore({
               onStoreChange()
               console.groupEnd()
             })
-          } else onStoreChange()
+          } else {
+            transient = snapshot = state
+            onStoreChange()
+          }
         }
         console.groupEnd()
       })
