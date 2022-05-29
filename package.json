@@ -1,6 +1,6 @@
 {
   "name": "@bottom-sheet/react-hooks",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "The hooks that power `@bottom-sheet/react-spring`",
   "keywords": [
     "typescript",

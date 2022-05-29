@@ -1,3 +1,11 @@
+## [1.0.12](https://github.com/bottom-sheet/react-hooks/compare/v1.0.11...v1.0.12) (2022-05-29)
+
+
+### Bug Fixes
+
+* but rAF scheduling behind flag ([08ba7d9](https://github.com/bottom-sheet/react-hooks/commit/08ba7d9caeee3faa45c6d852e90d0d126680a6b3))
+* update snapshot ([4e98aeb](https://github.com/bottom-sheet/react-hooks/commit/4e98aeb143f5ccbdca44169af565da7c19af116b))
+
 ## [1.0.11](https://github.com/bottom-sheet/react-hooks/compare/v1.0.10...v1.0.11) (2022-05-29)
 
 
