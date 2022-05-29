@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/bottom-sheet/react-hooks/compare/v1.0.10...v1.0.11) (2022-05-29)
+
+
+### Bug Fixes
+
+* schedule store updates in rAFs ([d5bd024](https://github.com/bottom-sheet/react-hooks/commit/d5bd0240f28b38136befafb3c945adbfaf75869f))
+
 ## [1.0.10](https://github.com/bottom-sheet/react-hooks/compare/v1.0.9...v1.0.10) (2022-05-29)
 
 
