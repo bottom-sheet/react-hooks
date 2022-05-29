@@ -49,22 +49,25 @@ function createStore({
         // @TODO: flesh out the logic for when to notify react of state changes or not (as state updates can be expensive and we should be transient when possible)
         // @TODO: put updateSnapshot actions in the state machine as declared events
         // for now just re-render on every change and map out events in userland before abstracting them to the state machine
-        console.groupCollapsed('state.changed')
+        console.groupCollapsed('service.onTransition')
         transient = state
-        console.log('transient', state.value, state.context)
+        console.log(state.value, state.context)
         if (state.changed) {
           if (unstable__requestAnimationFrame) {
             cancelAnimationFrame(rAF)
             rAF = requestAnimationFrame(() => {
               console.group('onStoreChange')
-              console.log({ value: state.value, context: state.context })
+              console.log(state.value, state.context)
               transient = snapshot = state
               onStoreChange()
               console.groupEnd()
             })
           } else {
+            console.group('onStoreChange')
+            console.log(state.value, state.context)
             transient = snapshot = state
             onStoreChange()
+            console.groupEnd()
           }
         }
         console.groupEnd()
