@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/bottom-sheet/react-hooks/compare/v1.0.9...v1.0.10) (2022-05-29)
+
+
+### Bug Fixes
+
+* always update the transient snapshot ([e4c7e01](https://github.com/bottom-sheet/react-hooks/commit/e4c7e01bf0413e2d37d667db64847c4c39898104))
+
 ## [1.0.9](https://github.com/bottom-sheet/react-hooks/compare/v1.0.8...v1.0.9) (2022-05-29)
 
 
