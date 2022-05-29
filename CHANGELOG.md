@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/bottom-sheet/react-hooks/compare/v1.0.8...v1.0.9) (2022-05-29)
+
+
+### Bug Fixes
+
+* allow initialHeight to be a number ([752aef1](https://github.com/bottom-sheet/react-hooks/commit/752aef1a119514f7a4a897cd8adeb3bc1e4fd581))
+
 ## [1.0.8](https://github.com/bottom-sheet/react-hooks/compare/v1.0.7...v1.0.8) (2022-05-28)
 
 
