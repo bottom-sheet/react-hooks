@@ -16,11 +16,13 @@ import { interpret } from 'xstate'
 export interface BottomSheetMachineProps {
   initialHeight?: number | GetInitialHeight
   snapPoints?: GetSnapPoints
+  unstable__requestAnimationFrame?: boolean
 }
 
 function createStore({
   initialHeight = defaultInitialHeight,
   snapPoints = defaultSnapPoints,
+  unstable__requestAnimationFrame = false,
 }: BottomSheetMachineProps = {}) {
   console.debug('createStore')
   const service = interpret(
@@ -51,15 +53,16 @@ function createStore({
         transient = state
         console.log('transient', state.value, state.context)
         if (state.changed) {
-          cancelAnimationFrame(rAF)
-          rAF = requestAnimationFrame(() => {
-            console.group('onStoreChange')
-            console.log({ value: state.value, context: state.context })
-            transient = snapshot = state
-            onStoreChange()
-            console.groupEnd()
-          })
-          console.groupEnd()
+          if (unstable__requestAnimationFrame) {
+            cancelAnimationFrame(rAF)
+            rAF = requestAnimationFrame(() => {
+              console.group('onStoreChange')
+              console.log({ value: state.value, context: state.context })
+              transient = snapshot = state
+              onStoreChange()
+              console.groupEnd()
+            })
+          } else onStoreChange()
         }
         console.groupEnd()
       })
