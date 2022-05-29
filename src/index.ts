@@ -52,7 +52,12 @@ function createStore({
           console.log(state.value, state.context)
           onStoreChange()
           console.groupEnd()
-        } else console.debug('state.changed: false')
+        } else {
+          console.groupCollapsed('state.changed: false')
+          transient = state
+          console.log(state.value, state.context)
+          console.groupEnd()
+        }
       })
       console.debug('service.start')
       service.start()
