@@ -1,3 +1,10 @@
+## [1.0.14](https://github.com/bottom-sheet/react-hooks/compare/v1.0.13...v1.0.14) (2022-06-07)
+
+
+### Bug Fixes
+
+* bump state-machine ([4cac0e7](https://github.com/bottom-sheet/react-hooks/commit/4cac0e752bd301688eff444a96ca35b7728374be))
+
 ## [1.0.13](https://github.com/bottom-sheet/react-hooks/compare/v1.0.12...v1.0.13) (2022-05-29)
 
 
