@@ -1,3 +1,10 @@
+## [1.0.16](https://github.com/bottom-sheet/react-hooks/compare/v1.0.15...v1.0.16) (2022-07-06)
+
+
+### Bug Fixes
+
+* bump deps ([4f31938](https://github.com/bottom-sheet/react-hooks/commit/4f3193863349b559b21f04cc9400d82c313a5187))
+
 ## [1.0.15](https://github.com/bottom-sheet/react-hooks/compare/v1.0.14...v1.0.15) (2022-06-08)
 
 
