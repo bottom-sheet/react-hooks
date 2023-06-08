@@ -3,7 +3,7 @@
   "packageRules": [
     {
       "extends": [":automergeRequireAllStatusChecks"],
-      "depTypeList": ["dependencies", "peerDependencies"],
+      "matchDepTypes": ["dependencies", "peerDependencies"],
       "automerge": false
     }
   ]
